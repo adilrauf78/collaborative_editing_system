@@ -76,13 +76,13 @@ A professional **Real-Time Collaborative Document Editing System** built with ME
 ## ▶️ How to Run the Project
 
 ### 1️⃣ Backend (Server Side)
-cd server
-npm install
-npm run start
+- cd server
+- npm install
+- npm run start
 
 ### 2️⃣ Frontend (Server Side)
-cd client
-npm install
-npm start
+- cd client
+- npm install
+- npm start
 
 
