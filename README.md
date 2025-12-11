@@ -76,14 +76,14 @@ A professional **Real-Time Collaborative Document Editing System** built with ME
 ## ▶️ How to Run the Project
 
 ### 1️⃣ Backend (Server Side)
-- cd server
-- npm install
-- npm run start
+```bash
+cd server
+npm run server
 
 ### 2️⃣ Frontend (Server Side)
-- cd client
-- npm install
-- npm start
+```bash
+cd client
+npm start
 
 ### Backend Tests
 - **Auth API Tests**: signup, login, refresh token  
@@ -94,5 +94,4 @@ A professional **Real-Time Collaborative Document Editing System** built with ME
 _Run tests in server directory:_
 ```bash
 cd server
-npm install
 npm test
