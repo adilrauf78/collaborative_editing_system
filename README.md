@@ -75,11 +75,13 @@ A professional **Real-Time Collaborative Document Editing System** built with ME
 
 ## ▶️ How to Run the Project
 
-### 1️⃣ Backend (Server Side)
+### _1️⃣ Backend (Server Side):_
+```bash
 cd server
 npm run server
 
-### 2️⃣ Frontend (Server Side)
+### _2️⃣ Frontend (Server Side):_
+```bash
 cd client
 npm start
 
