@@ -85,4 +85,14 @@ A professional **Real-Time Collaborative Document Editing System** built with ME
 - npm install
 - npm start
 
+### Backend Tests
+- **Auth API Tests**: signup, login, refresh token  
+- **Document API Tests**: create, fetch, update, list documents  
+- **Version API Tests**: add version, get version list, revert version  
+- **Testing Tools**: Jest, Supertest, mongodb-memory-server  
 
+_Run tests in server directory:_
+```bash
+cd server
+npm install
+npm test
