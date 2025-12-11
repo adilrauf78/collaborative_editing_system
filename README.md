@@ -76,12 +76,12 @@ A professional **Real-Time Collaborative Document Editing System** built with ME
 ## ▶️ How to Run the Project
 
 ### 1️⃣ Backend (Server Side)
-cd server
-npm run server
+- cd server
+- npm run server
 
 ### 2️⃣ Frontend (Server Side)
-cd client
-npm start
+- cd client
+- npm start
 
 ### Backend Tests
 - **Auth API Tests**: signup, login, refresh token  
