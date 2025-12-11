@@ -79,11 +79,13 @@ A professional **Real-Time Collaborative Document Editing System** built with ME
 ```bash
 cd server
 npm run server
+```bash
 
 ### 2️⃣ Frontend (Server Side)
 ```bash
 cd client
 npm start
+```bash
 
 ### Backend Tests
 - **Auth API Tests**: signup, login, refresh token  
