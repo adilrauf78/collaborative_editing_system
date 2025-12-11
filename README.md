@@ -7,16 +7,17 @@ A professional **Real-Time Collaborative Document Editing System** built with ME
 ## 📸 Screenshots
 
 ### 🔐 Login Page
-![Login](screenshots/login.png)
+![Login](screenshots/login.PNG)
 
 ### 📝 My Documents Page
-![Editor](screenshots/my_documents.png)
+![My Documents](screenshots/my_documents.PNG)
 
 ### 🕒 Version History Page
-![Version History](screenshots/version_history.png)
+![Version History](screenshots/version_history.PNG)
 
-### 🕒 Login Api
-![Version History](screenshots/login_api.png)
+### 🔌 Login API
+![Login API](screenshots/login_api.PNG)
+
 
 
 ## ⭐ Features
@@ -75,15 +76,23 @@ A professional **Real-Time Collaborative Document Editing System** built with ME
 ## ▶️ How to Run the Project
 
 ### 1️⃣ Backend (Server Side)
+- cd server
+- npm install
+- npm run start
+
+### 2️⃣ Frontend (Server Side)
+- cd client
+- npm install
+- npm start
+
+### Backend Tests
+- **Auth API Tests**: signup, login, refresh token  
+- **Document API Tests**: create, fetch, update, list documents  
+- **Version API Tests**: add version, get version list, revert version  
+- **Testing Tools**: Jest, Supertest, mongodb-memory-server  
+
+_Run tests in server directory:_
 ```bash
 cd server
 npm install
-npm run start
-
-### 1️⃣ Frontend (Server Side)
-```bash
-cd client
-npm install
-npm start
-
-
+npm test
