@@ -10,10 +10,12 @@ const upload = multer();
 
 dotenv.config();
 
-// DB connect
-conncetDatabase();
-
 const app = express();
+
+// Connect to DB only if not testing
+if (process.env.NODE_ENV !== 'test') {
+  conncetDatabase();
+}
 
 // middlewares
 app.use(cors());
@@ -32,19 +34,22 @@ app.get('/test1', (req, res) => {
 });
 
 // HTTP server create
-const http = require("http");
-const server = http.createServer(app);
+if (process.env.NODE_ENV !== 'test') {
+  const http = require("http");
+  const server = http.createServer(app);
 
-// SOCKET.IO load
-const io = require("socket.io")(server, {
-  cors: { origin: "*" },
-});
+  // SOCKET.IO load
+  const io = require("socket.io")(server, {
+    cors: { origin: "*" },
+  });
 
-// socket.js ko call
-require("./socket/socket")(io);
+  // socket.js ko call
+  require("./socket/socket")(io);
 
-const PORT = process.env.PORT || 8000;
+  const PORT = process.env.PORT || 8000;
+  server.listen(PORT, () => {
+    console.log(`Server is Working on ${PORT}`.bgMagenta);
+  });
+}
 
-server.listen(PORT, () => {
-  console.log(`Server is Working on ${PORT}`.bgMagenta);
-});
+module.exports = app; // ✅ export app for tests
