@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Card, Button, List, message, Typography, Input } from "antd";
+import { List, Button, message, Typography, Input, Dropdown, Avatar } from "antd";
 import { getUserDocuments } from "../services/documentService";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const { Title, Text } = Typography;
@@ -9,9 +9,13 @@ const { Title, Text } = Typography;
 const MyDocuments = () => {
   const [documents, setDocuments] = useState([]);
   const [search, setSearch] = useState("");
+  const [userName, setUserName] = useState("User");
+  const navigate = useNavigate();
 
   useEffect(() => {
     loadDocuments();
+    const storedName = localStorage.getItem("userName");
+    if (storedName) setUserName(storedName);
   }, []);
 
   const loadDocuments = async () => {
@@ -35,8 +39,44 @@ const MyDocuments = () => {
     doc.title.toLowerCase().includes(search.toLowerCase())
   );
 
+  // Dropdown menu items
+  const menuItems = [
+    {
+      key: "1",
+      label: "Edit Profile",
+      onClick: () => navigate("/editprofile"),
+    },
+    {
+      key: "2",
+      label: "Change Password",
+      onClick: () => navigate("/updatepassword"),
+    },
+    {
+      key: "3",
+      label: "Logout",
+      onClick: () => {
+        localStorage.clear();
+        navigate("/login");
+      },
+    },
+  ];
+
   return (
-    <div className="min-h-screen bg-gray-100 px-4 py-12 flex justify-center">
+    <div className="min-h-screen bg-gray-100 px-4 py-12 flex justify-center relative">
+      {/* Top-right user avatar */}
+      <div className="fixed top-6 right-6">
+        <Dropdown menu={{ items: menuItems }} placement="bottomRight" arrow>
+          <span>
+            <Avatar
+              size={50}
+              className="bg-purple-500 cursor-pointer shadow-lg text-white font-bold"
+            >
+              {userName.charAt(0).toUpperCase()}
+            </Avatar>
+          </span>
+        </Dropdown>
+      </div>
+
       <motion.div
         className="bg-white w-full max-w-3xl p-10 rounded-3xl shadow-2xl"
         initial={{ opacity: 0, y: 20 }}
@@ -49,7 +89,7 @@ const MyDocuments = () => {
             level={2}
             className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 font-extrabold"
           >
-             Collaborative Editing System 
+            Collaborative Editing System
           </Title>
           <Text className="text-gray-500 italic tracking-wider">
             Your VIP workspace for real-time collaboration

@@ -7,6 +7,8 @@ import DocumentEditor from "./pages/DocumentEditor";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import VersionPage from "./pages/VersionPage";
+import EditProfilePage from "./pages/EditProfilePage";
+import UpdatePasswordPage from "./pages/UpdatePasswordPage";
 
 
 function App() {
@@ -51,6 +53,23 @@ function App() {
             element={
               <ProtectedRoute>
                 <VersionPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/editprofile"
+            element={
+              <ProtectedRoute>
+                <EditProfilePage />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/updatepassword"
+            element={
+              <ProtectedRoute>
+                <UpdatePasswordPage />
               </ProtectedRoute>
             }
           />
