@@ -77,12 +77,10 @@ A professional **Real-Time Collaborative Document Editing System** built with ME
 
 ### 1️⃣ Backend (Server Side)
 - cd server
-- npm install
-- npm run start
+- npm run server
 
 ### 2️⃣ Frontend (Server Side)
 - cd client
-- npm install
 - npm start
 
 ### Backend Tests
@@ -94,5 +92,4 @@ A professional **Real-Time Collaborative Document Editing System** built with ME
 _Run tests in server directory:_
 ```bash
 cd server
-npm install
 npm test
